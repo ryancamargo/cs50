@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+    <table style='margin-top: 30px' class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col"> Symbol </th>
+          <th scope="col"> Shares </th>
+          <th scope="col"> Current Price (USD) </th>
+          <th scope="col"> Total Value (USD) </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stocks %}
+        <tr>
+          <td> {{ stock.symbol }} </td>
+          <td>  {{ stock.total_shares }}  </td>
+          <td>  {{ stock.price }}  </td>
+          <td>  {{ stock.price * stock.total_shares }}  </td>
+        </tr>
+        {% endfor %}
+        <tr class='bg-success'>
+            <th scope='row' colspan='3'> Remaining Cash </th>
+            <td> {{ cash }} </td>
+        </tr>
+      </body>
+    </table>
+{% endblock %}

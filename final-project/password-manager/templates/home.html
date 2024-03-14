@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Home</h1>
+    <div class="password-generator">
+        <h2>Password Generator</h2>
+        <form id="password-generator-form">
+            <div class="form-group">
+                <label for="password-length">Password Length:</label>
+                <input type="number" id="password-length" name="password-length" value="12" min="8" max="64">
+            </div>
+            <div class="form-group">
+                <label for="include-uppercase">Include Uppercase Letters:</label>
+                <input type="checkbox" id="include-uppercase" name="include-uppercase" checked>
+            </div>
+            <div class="form-group">
+                <label for="include-special-characters">Include Special Characters:</label>
+                <input type="checkbox" id="include-special-characters" name="include-special-characters" checked>
+            </div>
+            <button type="button" onclick="generatePassword()">Generate Password</button>
+        </form>
+        <div id="generated-password"></div>
+        <button onclick="savePassword()">Save Password</button>
+    </div>
+    <div class="credentials">
+        <h2>Credentials</h2>
+        <ul>
+            {% for credential in credentials %}
+            <li>
+                <strong>{{ credential[2] }}</strong>
+                <p>Username: {{ credential[3] }}</p>
+                <p>Password: {{ credential[4] }}</p>
+                <a href="/edit_credential/{{ credential[0] }}">Edit</a>
+                <a href="/delete_credential/{{ credential[0] }}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,2 @@
+it's probably some kind of reading of users danceability, valence and energy throughout 2018
+it might not be very representative of the listener because it is a calculation that only take as an argument some variables that are not so discritive to the user as it is to the computer/machine, the best way would be using the likes of the user and how many repetitions of the same songs they did throughout the entire year

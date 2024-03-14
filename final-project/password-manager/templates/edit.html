@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Edit Credential</h1>
+    <form action="/edit_credential/{{ credential[0] }}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{ credential[2] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ credential[3] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" value="{{ credential[4] }}" required>
+        </div>
+        <button type="submit">Update Credential</button>
+    </form>
+</div>
+{% endblock %}

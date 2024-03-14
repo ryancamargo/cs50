@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order History
+{% endblock %}
+
+{% block main %}
+
+    <table style='margin-top: 30px' class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col"> Symbol </th>
+          <th scope="col"> Purchase/Sale Price </th>
+          <th scope="col"> Shares </th>
+          <th scope="col"> Transaction Time (UTC) </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for transaction in transactions %}
+        <tr>
+          <td>  {{ transaction.symbol }}  </td>
+          <td>  {{ transaction.price }}  </td>
+          <td>  {{ transaction.shares }}  </td>
+          <td>  {{ transaction.timestamp }}  </td>
+        </tr>
+        {% endfor %}
+
+      </body>
+    </table>
+{% endblock %}
