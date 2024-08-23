@@ -70,5 +70,3 @@ The Password Manager project provides a robust and user-friendly solution for ef
 
 Feel free to contribute to the project by providing feedback, suggestions, or even contributing code enhancements. Together, we can continue to improve and enhance the Password Manager application to meet the evolving needs of users.
 
----
-**Note:** Replace `https://example.com` in the Video Demo link with the actual URL of your video demo.
